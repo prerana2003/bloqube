@@ -1,0 +1,151 @@
+{
+    "documentKey": "subject-withdrawal-process",
+    "documentVersion": "1.0",
+    "documentLabel": "Subject Withdrawal",
+    "steps": [
+        {
+            "key": "Subject_Withdrawal_Form",
+            "label": "Subject Withdrawal",
+            "verificationRequired": true,
+            "access": {
+                "edit": [
+                    "PI"
+                ],
+                "verify": [
+                    "PI"
+                ]
+            },
+            "categories": [
+                {
+                    "key": "Declaration",
+                    "label": "",
+                    "fields": [
+                        {
+                            "key": "SW_declaration",
+                            "label": "By signing this form I confirmed that the participant mentioned above withdrew from the clinical study and will not be consider for future visits. I also understand that while its not mandatory to capture the reason behind their withdrawal I have explained them their rights, options, andend of their candidature in this study",
+                            "type": "LABEL",
+                            "subtype": "text",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "required": true,
+                            "multivalue": false,
+                            "verticalAlignCenter": true,
+                            "lg": 12,
+                            "md": 12,
+                            "sm": 12,
+                            "validation": ""
+                        },
+                        {
+                            "key": "SW_reason",
+                            "label": "Reason",
+                            "type": "INLINE_TEXT_FIELD",
+                            "subtype": "text",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "required": true,
+                            "multivalue": false,
+                            "verticalAlignCenter": true,
+                            "lg": 12,
+                            "md": 12,
+                            "sm": 12,
+                            "validation": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "SW_signatureConfiguration",
+                    "label": "",
+                    "fields": [
+                        {
+                            "key": "subjectName",
+                            "label": "Subject Name",
+                            "type": "DATA_LABEL",
+                            "subtype": "text",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "required": true,
+                            "multivalue": false,
+                            "verticalAlignCenter": true,
+                            "lg": 4,
+                            "md": 4,
+                            "sm": 6,
+                            "validation": ""
+                        },
+                        {
+                            "key": "SW_signatureConfiguration_SubjectSign",
+                            "label": "Subject's Signature",
+                            "type": "SIGNATURE",
+                            "subtype": "img",
+                            "currentDateKey": "EOS_signatureConfiguration_SubjectSign_date",
+                            "defaultValue": "",
+                            "placeholder": "Signature",
+                            "required": true,
+                            "multivalue": false,
+                            "lg": 6,
+                            "md": 6,
+                            "sm": 12,
+                            "validation": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "SW_signatureConfiguration2",
+                    "label": "Investigator's/Site-Coordinator's Signiture",
+                    "fields": [
+                        {
+                            "key": "PI",
+                            "label": "Investigator's Name",
+                            "type": "INLINE_TEXT_FIELD",
+                            "subtype": "text",
+                            "defaultValue": "",
+                            "placeholder": "",
+                            "required": true,
+                            "multivalue": false,
+                            "verticalAlignCenter": true,
+                            "lg": 4,
+                            "md": 4,
+                            "sm": 6,
+                            "validation": ""
+                        },
+                        {
+                            "key": "SW_signatureConfiguration2_PISign",
+                            "label": "Signature of person(s) conducting the informed consent discussion",
+                            "type": "SIGNATURE",
+                            "subtype": "img",
+                            "currentDateKey": "EOS_signatureConfiguration2_PISign_date",
+                            "defaultValue": "",
+                            "placeholder": "Signature",
+                            "required": true,
+                            "multivalue": false,
+                            "lg": 6,
+                            "md": 6,
+                            "sm": 12,
+                            "validation": ""
+                        }
+                    ]
+                }
+            ],
+            "fields": [
+                {
+                    "key": "submit",
+                    "label": "Save & Continue",
+                    "access": "PI",
+                    "type": "BUTTON",
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12
+                },
+                {
+                    "key": "submitForVerification",
+                    "submitVerificationTo": "PI",
+                    "label": "Submit for Verification",
+                    "access": "site_coordinator",
+                    "type": "BUTTON",
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12
+                }
+            ]
+        }
+    ]
+}

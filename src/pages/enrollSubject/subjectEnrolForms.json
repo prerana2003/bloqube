@@ -1,0 +1,3942 @@
+{
+  "documentKey": "subject_enrollment_forms",
+  "documentVersion": "1.0",
+  "documentLabel": "Subject Enrollment and Consent Forms",
+  "steps": [
+    {
+      "key": "SubjectEnrollmentFormParent",
+      "label": "Enroll",
+      "verificationRequired": true,
+      "externalVerificationRequired": true,
+      "access": {
+        "edit": [
+          "PI",
+          "site_coordinator"
+        ],
+        "verify": [
+          "PI"
+        ],
+        "externalVerify": [
+          "site_monitor"
+        ]
+      },
+      "readOnlyActions": [
+        {
+          "applicableStatus": [
+            "External_Verification_Pending"
+          ],
+          "label": "Verify",
+          "actionData": {
+            "role": [
+              "site_monitor"
+            ]
+          }
+        }
+      ],
+      "sections": [
+        {
+          "key": "SubjectEnrollmentForm",
+          "label": "Subject Basic Details",
+          "categories": [
+            {
+              "key": "subjectDetails",
+              "label": "",
+              "fields": [
+                {
+                  "key": "subjectName",
+                  "label": "Name",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter Subject Name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "siteNo",
+                  "label": "Site No",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "placeholder": "Enter Site Number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "dob",
+                  "label": "Date of Birth",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "DATE",
+                  "defaultValue": "",
+                  "placeholder": "Enter Date of Birth",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "calculatedAge",
+                  "label": "Age",
+                  "type": "INLINE_TEXT_FIELD",
+                  "valueKey": "subjectDetails.dob",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "placeholder": "Enter age of subject",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectGender",
+                  "label": "Gender",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select gender",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Male",
+                      "Female"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectAddress",
+                  "label": "Address",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter Address",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectCity",
+                  "label": "City",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter city",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectState",
+                  "label": "State",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter State",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectZipcode",
+                  "label": "Zip Code",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "placeholder": "Enter Zipcode",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectEmail",
+                  "label": "Email",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter email Id",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectPhone",
+                  "label": "Phone Number(Optional)",
+                  "type": "PHONE_INPUT",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "placeholder": "Enter phone number",
+                  "required": false,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectMobile",
+                  "label": "Mobile Number",
+                  "type": "PHONE_INPUT",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "placeholder": "Enter mobile number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectHeight",
+                  "label": "Height",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "number",
+                  "step": 0.01,
+                  "defaultValue": "",
+                  "placeholder": "Enter height",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 2,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "height_unit",
+                  "label": "Unit",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select unit",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Inches (in)",
+                      "Feet (ft)"
+                    ]
+                  },
+                  "lg": 2,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectWeight",
+                  "label": "Weight",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "step": 0.01,
+                  "placeholder": "Enter weight",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 2,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "weight_unit",
+                  "label": "Unit",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select unit",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Kg",
+                      "Pound"
+                    ]
+                  },
+                  "lg": 2,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectOccupation",
+                  "label": "Occupation",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter occupation",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectRace",
+                  "label": "Race",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select race",
+                  "required": true,
+                  "justifycontent": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "White",
+                      "Black or African American",
+                      "American Indian or Alaska Native",
+                      "Asian Indian",
+                      "Chinease",
+                      "Filipino",
+                      "Japanese",
+                      "Korean",
+                      "Vietnamese",
+                      "Other Asian",
+                      "Native Hawaiian",
+                      "Guamanian or Chamorro",
+                      "Samoan",
+                      "Other(please specify)"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "subjectRace_comment",
+                      "label": "",
+                      "type": "INLINE_TEXT_FIELD",
+                      "subtype": "text",
+                      "justifycontent": true,
+                      "dependsOn": "subjectDetails.subjectRace",
+                      "dependsValue": "Other(please specify)",
+                      "requiredDepends": "subjectDetails.subjectRace",
+                      "requiredValidationValue": "Other(please specify)",
+                      "defaultValue": "",
+                      "placeholder": "Specify here",
+                      "required": false,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 12,
+                      "md": 12,
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                },
+                {
+                  "key": "subjectEthnicity",
+                  "label": "Ethnicity",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select Ethnicity",
+                  "required": true,
+                  "justifycontent": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Hispanic or Latino",
+                      "Non Hispanic or Latino",
+                      "Other(please specify)"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "subjectEthnicity_comment",
+                      "label": "",
+                      "type": "INLINE_TEXT_FIELD",
+                      "dependsOn": "subjectDetails.subjectEthnicity",
+                      "dependsValue": "Other(please specify)",
+                      "requiredDepends": "subjectDetails.subjectEthnicity",
+                      "requiredValidationValue": "Other(please specify)",
+                      "subtype": "text",
+                      "justifycontent": true,
+                      "defaultValue": "",
+                      "placeholder": "Specify here",
+                      "required": false,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 12,
+                      "md": 12,
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fields": [
+            {
+              "key": "submit",
+              "label": "Save and Continue",
+              "access": "PI",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            },
+            {
+              "key": "submitForVerification",
+              "submitVerificationTo": "PI",
+              "label": "Submit for Verification",
+              "access": "site_coordinator",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "IC",
+      "label": "IC",
+      "showInReadOnly": false,
+      "verificationRequired": true,
+      "access": {
+        "edit": [
+          "PI",
+          "site_coordinator"
+        ],
+        "verify": [
+          "PI"
+        ],
+        "actions": [
+          {
+            "applicableStatus": [
+              "Completed",
+              "Verification_Pending"
+            ],
+            "type": "readOnly",
+            "label": "Inform Consent",
+            "actionData": {
+              "role": [
+                "PI"
+              ]
+            }
+          }
+        ]
+      },
+      "sections": [
+        {
+          "key": "IC",
+          "label": "IC",
+          "otpRequired": true,
+          "categories": [
+            {
+              "key": "icSummaryOfChanges",
+              "label": "Summary of Changes",
+              "fields": [
+                {
+                  "key": "protocolNoKey",
+                  "label": "Protocol #",
+                  "type": "DATA_LABEL",
+                  "labelKey": "PROTOCOL_NUMBER",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter Site Name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "protocolNoKey",
+                  "label": "Local Protocol #",
+                  "type": "DATA_LABEL",
+                  "labelKey": "PROTOCOL_NUMBER",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter Site Name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "protocolVersionDate",
+                  "label": "Protocol Version Date",
+                  "type": "DATA_LABEL",
+                  "labelKey": "PROTOCOL_VERSION_DATE",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter Site Name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "informConsentVersionData",
+                  "label": "Informed Consent Version Date",
+                  "type": "DATA_LABEL",
+                  "labelKey": "INFORM_CONSENT_VERSION_DATE",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter Site Name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "studyTitleKey",
+                  "label": "Trial Title",
+                  "type": "DATA_LABEL",
+                  "labelKey": "TRIAL_TITLE",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter Site Name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "double spaces"
+                },
+                {
+                  "key": "summaryOfChangesConsent",
+                  "label": "Summary of Changes-Consent",
+                  "type": "DATA_HTML",
+                  "subtype": "text",
+                  "defaultValue": "<div style='display:flex;flex-direction: column;'> <div style='display: flex;border-bottom: 1px solid rgb(211,210,208);'> <div style='padding: 15px;display: flex;flex:0.2;justify-content: center;align-items: center;border-right:1px solid rgb(211,210,208);'> Sr.No. </div> <div style='padding: 15px;display: flex;flex:0.2;justify-content: center;align-items: center;border-right:1px solid rgb(211,210,208);'> Section </div> <div style='padding: 15px;display: flex;flex:0.2;justify-content: center;align-items: center;border-right:1px solid rgb(211,210,208);'> Pages </div> <div style='padding: 15px;display: flex;flex:1;justify-content: center;align-items: center;'> Changes </div> </div> <div style='display: flex;'> <div style='padding: 15px;display: flex;flex:0.2;border-right:1px solid rgb(211,210,208);'> 1 </div> <div style='padding: 15px;display: flex;flex:0.2;justify-content: center;align-items: center;border-right:1px solid rgb(211,210,208);'> </div> <div style='padding: 15px;display: flex;flex:0.2;justify-content: center;align-items: center;border-right:1px solid rgb(211,210,208);'> </div> <div style='padding: 15px;display: flex;flex:1;justify-content: center;align-items: center;'> There are no changes to the content of the ICF. The date has been changed to match the most recent version of the protocol. </div> </div> </div>",
+                  "placeholder": "Enter Site Name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            },
+            {
+              "key": "consentForm",
+              "label": "Consent Form",
+              "fields": [
+                {
+                  "key": "studyTitleForStudyParticipantslabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "studyTitleForStudyParticipants",
+                      "label": "Study Title for Study Participants",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid rgb(211,210,208)'> BQ1 and BQ2 drug trial for metastatic melanoma patients </div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "studyTitleForStudyParticipantsAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "treatMentApproachlabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "treatMentApproach",
+                      "label": "What is the usual approach to my treatment?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid rgb(211,210,208)'> A number of anti-cancer drugs are used to treat these types of cancers and sometimes surgery and radiation therapy is useful. Since you have an advanced disease and the cancer has spread to various parts of the body, the treatment options are rather limited. <br/><br/> You are being asked to take part in this study because you have advanced metastatic melanoma which has grown or has recurred. People who are not in a study are usually treated with either surgery, radiation, or with drugs that are either experimental or FDA approved. Sometimes, combinations of these are used and your doctor can explain which may be best for you. These treatments can reduce symptoms and may stop the tumor from growing for several months or more and could prolong survival time </div>",
+                      "placeholder": "Enter Site Name",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "treatMentApproachAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "otherChoicelabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "otherChoice",
+                      "label": "What are my other choices if I do not take part in this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid rgb(211,210,208)'> If you decide not to take part in this study, you have other choices. For example: <ul> <li> you may choose to have the usual approach described above </li> <li> you may choose to take part in a different study, if one is available </li> <li> or you may choose not to be treated for cancer but you may want to receive comfort care to relieve symptoms. </li> </ul> </div>",
+                      "placeholder": "Enter Site Name",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "otherChoiceAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "aboutStudylabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "aboutStudy",
+                      "label": "Why is this study being done?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid rgb(211,210,208)'> The purpose of this study is to test whether giving a combination of the two new drugs BQ-1 and BQ-2 is safe and leads to a decrease in tumor, metastasis and prolongation of life in patients with advanced metastatic melanoma. This study uses a combination of drugs namely BQ-1 and BQ-2 that have already been FDA-approved to be given via intravenous infusions. There will be about 30 people taking part in this study. These drugs have already been tested individually in animals and in humans and have shown to shrink tumors to some degree. </div>",
+                      "placeholder": "Enter Site Name",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "aboutStudyAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "aboutStudylabel1",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "aboutStudy1",
+                      "label": "What are study groups?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid rgb(211,210,208)'> There is only one study group at each of the three sites in this trial. All study participants will get the same study drugs BQ-1 and BQ-2. </div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "aboutStudy1Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "aboutStudylabel2",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "aboutStudy2",
+                      "label": "How long will I be in this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid rgb(211,210,208)'> You will receive the two experimental drugs BQ-1 and BQ-2 for a maximum of 7 cycles of therapy. In each cycle, you will be given BQ-1 via intravenous infusions on days 1, 5 and 10 and BQ-2 will be administered on days 3 and 7 via intravenous infusions in each cycle. After the completion of treatments in each cycle, the attending physician will continue to watch you for side effects and will follow your condition for 20 days before starting the new cycle of treatments. The total treatment and observation time will be a maximum of 7 months. </div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "aboutStudy2Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "aboutStudylabel3",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "aboutStudy3",
+                      "label": "What extra tests and procedures will I have if I take part in this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>Before you begin the study:</p><p>You will need to have the following extra tests and exams to find out if you can be in the study:</p><ul><li>ECG</li><li>Blood and urine tests</li><li>CT scan</li><li>Biopsy</li></ul><p>Small pieces of cancer tissue removed by surgery, biopsies; A blood sample; A urine sample will be taken for the study before you begin study drug and after the completion of each treatment cycle; This sample is required in order for you to take part in this study because the research on the sample is an important part of the study. The research biopsy is done in a similar way to biopsies done for diagnosis. A pathologist will analyze the biopsy sample and establish the stage of your cancer.</p><p>Common side effects of a biopsy are a small amount of bleeding at the time of the procedure, pain at the biopsy site, which can be treated with regular pain medications, and bruising. Rarely, an infection can occur. You will sign a separate consent form before the biopsy is taken. This will be a standard surgical consent form from the institution where the biopsy procedure takes place.</p><p>The specimen left over will be stored for biobanking.</p><p>Your privacy is very important and the researchers will make every effort to protect it. Your test results will be identified by a unique code and the list that links the code to your name will be kept separate from your sample and health information. The results will be available to the study participant and the study doctor at the completion of the trials.</p><p>Neither you nor your health care plan/insurance carrier will be billed for the collection of the blood, ruine and biopsy samples that will be used for this study.</p><p>If the exams, tests, and procedures show that you can take part in the study, and you choose to take part, then you will need the following extra tests and procedures. They are not part of the usual approach for your type of cancer.</p><p></p>During the study:<ul><li>Blood and urine tests every month</li><li>CT scan every 3 months</li><li>Lesion biopsy immediately after study treatment is completed</li><li>Echocardiogram to see how your heart is working every 3 months</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "aboutStudy3Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "aboutStudylabel4",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "aboutStudy4",
+                      "label": "What possible risks can I expect from taking part in this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>If you choose to take part in this study, there is a risk that:</p><ul><li>You may lose time at work or home and spend more time in the hospital or doctor’s office than usual</li><li>You may be asked sensitive or private questions which you normally do not discuss</li><li>The study drugs/study approach may not be better, and could possibly be worse, than the usual approach for your cancer</li><li>There is a risk someone could get access to the personal information in your medical records or other information researchers have kept about you. Someone might be able to trace this information back to you. The researchers believe the chance that someone will identify you is very small, but the risk may change in the future as people come up with new ways of tracing information. In some cases, this information could be used to make it harder for you to get or keep a job. There are laws against misuse of genetic information, but they may not give full protection. The researchers believe the chance these things will happen is very small, but cannot promise that they will not occur.</li><li>There can also be a risk in finding out new genetic information about you. New health information about inherited traits that might affect you or your blood relatives could be found during a study.</li></ul><p>The drugs used in this study may affect how different parts of your body work such as your liver, kidneys, heart, and blood. The study doctor will be testing your blood and will let you know if changes occur that may affect your health.</p><p>There is also a risk that you could have side effects from the study drug(s)/study approach.</p><p>Here are important points about side effects:</p><ul><li>The study doctors do not know who will or will not have side effects.</li><li>Some side effects may go away soon, some may last a long time, or some may never go away.</li><li>Some side effects may interfere with your ability to have children.</li><li>Some side effects may be serious and may even result in death.</li></ul><p>Here are important points about how you and the study doctor can make side effects less of a problem:</p><ul><li>Tell the study doctor if you notice or feel anything different so they can see if you are having a side effect.</li><li>The study doctor may be able to treat some side effects.</li><li>The study doctor may adjust the study drugs to try to reduce side effects.</li></ul><p>The tables below show the most common and the most serious side effects that researchers know about. There might be other side effects that researchers do not yet know about. If important new side effects are found, the study doctor will discuss these with you.</p></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "aboutStudy4Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ1",
+                  "label": "Possible side effects of BQ-1",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12
+                },
+                {
+                  "key": "possibleSideEffectBQ1_1Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ1_1",
+                      "label": "Common, Some may be Serious",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>In 10 people receiving BQ-1, more than 2 and up to 10 may have:</p><ul><li>Anemia which may require blood transfusion</li><li>Diarrhea, nausea, vomiting</li><li>Difficulty swallowing</li><li>Tiredness</li><li>Headache</li><li>Bruising, bleeding</li><li>Numbness and tingling of the arms and legs</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ1_1Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ1_2Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ1_2",
+                      "label": "Occasional, Some may be Serious",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>In 10 people receiving BQ-1, from 4 to 10 may have:</p><ul><li>Heart attack</li><li>Chest pain</li><li>Abnormal heartbeat which may cause fainting</li><li>Hearing loss</li><li>Swelling and redness of the eye</li><li>Dry eye, mouth, skinProblem with eyelid</li><li>Blurred vision with chance of blindness</li><li>Discomfort from light, watering eyesSores in internal organs</li><li>Fluid in the belly</li><li>Internal bleeding which may cause black tarry stool, coughing up blood, or blood in vomit or urine</li><li>Constipation, heartburn, passing gas</li><li>Sores in the throat or mouthA tear or hole in internal organs that may require surgery</li><li>Chills, fever</li><li>Difficulty walking, opening mouth, with balance and hearing, smelling, eating, sleeping, talking or emptying the bladder</li><li>Swelling and redness at the site of the medication injection</li><li>Liver damage which may cause yellowing of eyes and skin</li><li>Allergic reaction which may cause rash, low blood pressure, wheezing, shortness of breath, swelling of the face or throat</li><li>Weight gain, weight loss, loss of appetite</li><li>Infection, especially when white blood cell count is low</li><li>Dehydration</li><li>PainInability to move shoulder or turn head</li><li>Dizziness, headache</li><li>Changes in taste</li><li>Abnormal body movement including the eye and eyelid</li><li>Bleeding from multiple sites including the vagina, testis, or brain</li><li>Stroke which may cause paralysis, weakness</li><li>Muscle weakness</li><li>Seizure</li><li>Worry, confusion, depression</li><li>Increased urination</li><li>Stuffy nose</li><li>Cough, hiccups, sinus problems</li><li>Swelling of the body which may cause shortness of breath</li><li>Scarring of the lungs</li><li>Changes in voice</li><li>Increased sweating</li><li>Hives, hair loss, itching, rash</li><li>Flushing, hot flashes</li><li>High blood pressure</li><li>Low blood pressure which may cause feeling faint</li><li>Blood clot which may cause swelling, pain, shortness of breath</li><li>Damage to organs which may cause shortness of breath</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ1_2Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ1_3Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ1_3",
+                      "label": "Rare and Serious",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>In 10 people receiving BQ-1, 2 or fewer may have:</p><ul><li>Kidney damage which may require dialysis</li><li>Redness, pain or peeling of palms and soles</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ1_3Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2",
+                  "label": "Possible side effects of BQ-2",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12
+                },
+                {
+                  "key": "possibleSideEffectBQ2_1Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_1",
+                      "label": "Common, Some may be Serious",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>In 10 people receiving BQ-2, more than 2 and up to 10 may have:</p><ul><li>Infection, especially when white blood cell count is low</li><li>Anemia which may require blood transfusion</li><li>Constipation, vomiting, nausea, diarrhea</li><li>Sores in mouth</li><li>Difficulty swallowing</li><li>Fever</li><li>Pain</li><li>Weight loss, loss of appetite</li><li>Bruising, bleeding</li><li>Tiredness, dizziness</li><li>Headache</li><li>Cough</li><li>Hair loss</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_1Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_2Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_2",
+                      "label": "Occasional, Some may be Serious",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>In 10 people receiving BQ-2, from 4 to 10 may have:</p><ul><li>Abnormal heartbeat</li><li>Watering eyes, discomfort from light, blurred vision</li><li>A tear or hole in the stomach which may require surgery</li><li>Allergic reaction which may cause rash, low blood pressure, wheezing, shortness of breath, swelling of the face or throat</li><li>Headache</li><li>Abnormal eye movement</li><li>Difficulty walking</li><li>Shortness of breath</li><li>Rash, itching</li><li>Increased risk of sunburn</li><li>Redness, pain or peeling of palms and soles</li><li>Scarring of the lungs</li><li>Blood clot</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_2Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_3Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_3",
+                      "label": "Rare and Serious",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>In 10 people receiving BQ-2, 2 or fewer may have:</p><ul><li>Damage to the heart which may cause swelling</li><li>Chest pain</li><li>Heart attack which may cause chest pain, shortness of breath</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_3Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_4",
+                  "label": "The CT scans that you will receive in this study will expose you to low amounts of radiation. Every day, people are naturally exposed to low levels of radiation that come from the sun and the environment. This type of radiation is called “background radiation”. Most of the time, this low amount of extra radiation is not harmful to you. However, scientists believe that if you get extra radiation that is more than about 30 year’s worth of background radiation, there is a chance of having a harmful side effect, including causing a new cancer. It is estimated that this could occur in about 1 out of every 1000 people who get a very large amount of extra radiation.",
+                  "type": "LABEL",
+                  "lg": 11,
+                  "md": 11,
+                  "sm": 11
+                },
+                {
+                  "key": "possibleSideEffectBQ2_5",
+                  "label": "Let your study doctor know of any questions you have about possible side effects. You can ask the study doctor questions about side effects at any time.",
+                  "type": "LABEL",
+                  "lg": 11,
+                  "md": 11,
+                  "sm": 11
+                },
+                {
+                  "key": "possibleSideEffectBQ2_6",
+                  "label": "Reproductive risks: You should not get pregnant, breastfeed, or father a baby while in this study. The drugs used in this study could be very damaging to an unborn baby. Check with the study doctor about what types of birth control, or pregnancy prevention, to use while in this study.",
+                  "type": "LABEL",
+                  "lg": 11,
+                  "md": 11,
+                  "sm": 11
+                },
+                {
+                  "key": "possibleSideEffectBQ2_7Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_7",
+                      "label": "What possible benefits can I expect from taking part in this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>This study has only a small chance of helping you because we do not know if the study drugs/study approach is effective. This study may help researchers learn things that may help other people in the future.</p></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_7Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_8Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_8",
+                      "label": "Can I stop taking part in this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>Yes. You can decide to stop at any time. If you decide to stop for any reason, it is important to let the study doctor know as soon as possible so you can stop safely. If you stop, you can decide whether or not to let the study doctor continue to provide your medical information to the organization running the study.</p><p>The study doctor will tell you about new information or changes in the study that may affect your health or your willingness to continue in the study.</p><p>The study doctor may take you out of the study:</p><ul><li>If your health changes and the study is no longer in your best interest</li><li>If new information becomes available</li><li>If you do not follow the study rules</li><li>If the study is stopped by the sponsor, IRB or FDA.</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_8Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_8Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_8",
+                      "label": "What are my rights in this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>Taking part in this study is your choice. No matter what decision you make, and even if your decision changes, there will be no penalty to you. You will not lose medical care or any legal rights.</p><p>For questions about your rights while in this study, call Site 1 Institutional Review Board at 999-999-9999.</p></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_8Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_9Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_9",
+                      "label": "What are costs of taking part in this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>The drugs will be supplied at no charge while you take part in this study and all costs related to the study including imaging, laboratory tests, doctor’s fee and any necessary interventions will all be covered and you will not have to pay anything.</p><p>You will be paid $50 per visit for taking part in this study.</p></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_9Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_10Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_10",
+                      "label": "What happens if I am injuired or hurt because I took part in this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>If you are injured or hurt as a result of taking part in this study and need medical treatment, please tell your study doctor. The study sponsors will offer to pay for medical treatment for injury.</p><p>If you feel this injury was a result of medical error, you keep all your legal rights to receive payment for this even though you are in a study.</p></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_10Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_11Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_11",
+                      "label": "Who will see my medical information?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>Your privacy is very important to us and the researchers will make every effort to protect it. Your information may be given out if required by law. For example, certain states require doctors to report to health boards if they find a disease like tuberculosis. However, the researchers will do their best to make sure that any information that is released will not identify you. Some of your health information, and/or information about your specimen, from this study will be kept in a central database for research. Your name or contact information will not be put in the database.</p><p>There are organizations that may inspect your records. These organizations are required to make sure your information is kept private, unless required by law to provide information.</p><p>Some of these organizations are:</p><ul><li>The study sponsor and any drug company supporting the study</li><li>The Institutional Review Board, IRB, is a group of people who review the research with the goal of protecting the people who take part in the study.</li><li>The Food and Drug Administration and the Data and Safety Monitoring Boards and similar ones if other countries are involved in the study.</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_11Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_12Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_12",
+                      "label": "Where can I get more information?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>You may visit the NCI Web site at http://cancer.gov/ for more information about studies or general information about cancer. You may also call the NCI Cancer Information Service to get the same information at: 1-800-4-CANCER (1-800-422-6237).</p><p>A description of this clinical trial will be available on http://www.ClinicalTrials.gov, as required by U.S. Law. This Web site will not include information that can identify you. At most, the Web site will include a summary of the results. You can search this Web site at any time.</p></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_12Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleSideEffectBQ2_13Label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleSideEffectBQ2_13",
+                      "label": "Who can answer my questions about this study?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>You can talk to the study doctor about any questions or concerns you have about this study or to report side effects or injuries. Contact the study doctor Dr. X at 999-999- 9999.</p></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleSideEffectBQ2_13Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "aDDITIONALSTUDIESSECTION",
+              "label": "Additional Studies Section:",
+              "fields": [
+                {
+                  "key": "optioanlStudiesToChooselabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "optioanlStudiesToChoose",
+                      "label": "This section is about optional studies you can choose to take part in",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid rgb(211,210,208)'> This part of the consent form is about optional studies that you can choose to take part in. You will not get health benefits from any of these studies. The researchers leading this optional study hope the results will help other people with cancer in the future. <br/><br/> The results will be added to your medical records and you or your study doctor will know the results. <br/><br/> You will not be billed for these optional studies. You can still take part in the main study even if you say “no” to any or all of these studies. If you sign up for but cannot complete any of the studies for any reason, you can still take part in the main study. <br/><br/> Circle your choice of “yes” or “no” for each of the following studies. </div>",
+                      "placeholder": "Enter Site Name",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "optioanlStudiesToChooseAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "optioanlImagingStudy1label",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "optioanlImagingStudy1",
+                      "label": "1. Optional imaging study – extra scan",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;''> If you choose to take part in this study, you will have an extra CT scan or a PET scan. These scans are already used in medical care but it would be taken at a time point in your treatment that is not usual. Researchers would use this scan to try to learn more about how treatment works on cancer. <br/><br/> If you agree to have this extra scan, it would involve contrast agent. The risks would be risk of contrast. The scan may be used to guide your medical care. There are educational materials available about this type of scan. Ask your study doctor about them, if you would like more information </div>",
+                      "placeholder": "Enter Site Name",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": "",
+                      "fields": []
+                    },
+                    {
+                      "key": "optioanlImagingStudy1Audio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "imagingStudyPETScanlabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "imagingStudyPETScan",
+                      "label": "Please circle your answer: I choose to take part in the imaging study and will have the extra PET scan:",
+                      "type": "RADIO_BUTTONS",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {
+                        "endpoint": "",
+                        "values": [
+                          "Yes",
+                          "No"
+                        ]
+                      },
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "imagingStudyPETScanAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "optioanlQualityOfLiftStudylabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "optioanlQualityOfLiftStudy",
+                      "label": "2. Optional Quality of Life Study",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;''> If you choose to take part in this study, you will be asked to fill out a form with questions about your physical and emotional well-being. Researchers will use this information to learn more about how cancer and cancer treatment affects people. <br/><br/> You will be asked to fill out this form at several times: before and after each treatment. Each form will take about 20 minutes to complete. The forms will ask about things like fatigue, diarrhea, hair loss etc. You may feel uncomfortable answering some of the questions, and you can skip any you do not want to answer. </div>",
+                      "placeholder": "Enter Site Name",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "optioanlQualityOfLiftStudyAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "qualityOfLifeStudylabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "qualityOfLifeStudy",
+                      "label": "Please circle your answer: I choose to take part in the Quality of Life study and will fill out these forms:",
+                      "type": "RADIO_BUTTONS",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {
+                        "endpoint": "",
+                        "values": [
+                          "Yes",
+                          "No"
+                        ]
+                      },
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "qualityOfLifeStudyAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "optionalSampleCollectionLabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "optionalSampleCollection",
+                      "label": "3. Optional Sample Collections for Laboratory Studies and/or Biobanking for Possible Future Studies",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;''><p>Researchers are trying to learn more about cancer. Much of this research is done using samples from your tissue, blood, urine, or other fluids. Through these studies, researchers hope to find new ways to prevent, detect, treat, or cure health problems.</p><p>Some of these studies may be about genes. Genes carry information about features that are found in you and in people who are related to you. Researchers are interested in the way that genes affect how your body responds to treatment.</p><p>If you choose to take part in this study, the study doctor for the main study would like to collect blood and samples of tissue from biopsies for research on the role of certain genes and proteins in the progression of metastatic melanoma.</p><p>The researchers ask your permission to store and use your samples and related health information (for example, your response to cancer treatment, results of study tests and medicines you are given) for medical research. The research that may be done is unknown at this time. Storing samples for future studies is called “biobanking”.</p></div>",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "optionalSampleCollectionLabelAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "whatIsInvolvedLabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "whatIsInvolved",
+                      "label": "What Is Involved?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>If you agree to take part, here is what will happen next:</p><ol><li><div><p>About 2 tablespoons of blood will be collected from a vein in your arm. OR A sample from the tissue that was collected at the time of your surgery will be sent to the Biobank. OR A sample of tissue will be collected from the optional extra biopsy.</p><ul><li>Your sample and some related health information will be sent to a researcher for use in the study described above. Remaining samples may be stored in the Biobank, along with samples from other people who take part. The samples will be kept until they are used up.</li><div style='width:100%;display:flex;justify-content:center'>OR</div><li>Your sample and some related health information may be stored in the Biobank, along with samples and information from other people who take part. The samples will be kept until they are used up. Information from your medical record will be updated from time to time.</li></ul></div></li><li>Qualified researchers can submit a request to use the materials stored in the Biobanks. A science committee at the clinical trials organization, and/or the National Cancer Institute, will review each request. There will also be an ethics review to ensure that the request is necessary and proper. Researchers will not be given your name or any other information that could directly identify you.</li><li>Neither you nor your study doctor will be notified when research will be conducted or given reports or other information about any research that is done using your samples.</li><li>Some of your genetic and health information may be placed in central databases that may be public, along with information from many other people. Information that could directly identify you will not be included.</li></ol></div>",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "whatIsInvolvedAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "whatAreRisksLabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "whatAreRisks",
+                      "label": "What Are The Possible Risks?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>If you agree to take part, here is what will happen next:</p><ol><li>The most common risks related to drawing blood from your arm are brief pain and possibly a bruise.</li><li>There is a risk that someone could get access to the personal information in your medical records or other information researchers have stored about you.</li><li>There is a risk that someone could trace the information in a central database back to you. Even without your name or other identifiers, your genetic information is unique to you. The researchers believe the chance that someone will identify you is very small, but the risk may change in the future as people come up with new ways of tracing information.</li><li>In some cases, this information could be used to make it harder for you to get or keep a job or insurance. There are laws against the misuse of genetic information, but they may not give full protection. There can also be a risk in knowing genetic information. New health information about inherited traits that might affect you or your blood relatives could be found during a study. The researchers believe the chance these things will happen is very small, but cannot promise that they will not occur.</li></ol></div>",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "whatAreRisksAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "infoKeptPrivateLabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "infoKeptPrivate",
+                      "label": "How Will Information About Me Be Kept Private?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>Your privacy is very important to the researchers and they will make every effort to protect it. Here are just a few of the steps they will take:</p><ol><li>When your sample(s) is sent to the researchers, no information identifying you (such as your name) will be sent. Samples will be identified by a unique code only.</li><li>The list that links the unique code to your name will be kept separate from your sample and health information. Any Biobank and Site 1 staff with access to the list must sign an agreement to keep your identity confidential.</li><li>Researchers to whom Site 1 sends your sample and information will not know who you are. They must also sign an agreement that they will not try to find out who you are.</li><li>Information that identifies you will not be given to anyone, unless required by law.</li><li>If research results are published, your name and other personal information will not be used.</li></ol></div>",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "infoKeptPrivateAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "possibleBenefitsLabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "possibleBenefits",
+                      "label": "What are possible benefits?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>You will not benefit from taking part.<br/> Your samples may be helpful to research whether you do or do not have cancer. The researchers, using the samples from you and others, might make discoveries that could help people in the future.</p></div>",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "possibleBenefitsAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "costsOrPaymentsAvailableLabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "costsOrPaymentsAvailable",
+                      "label": "Are There Any Costs Or Payments available?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>There are no costs to you or your insurance. You will not be paid for taking part. If any of the research leads to new tests, drugs, or other commercial products, you will not share in any profits.</p></div>",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "costsOrPaymentsAvailableAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "changeMyMindLabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "changeMyMind",
+                      "label": "What is I change My Mind?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>There are no costs to you or your insurance. You will not be paid for taking part. If any of the research leads to new testIf you decide you no longer want your samples to be used, you can call the study doctor, Dr. X at 999-999-9999 who will let the researchers know. Then, any sample that remains in the bank will no longer be used and related health information will no longer be collected. Samples or related information that have already been given to or used by researchers will not be returned.s, drugs, or other commercial products, you will not share in any profits.</p></div>",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "changeMyMindAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "moreQuestionslabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "moreQuestions",
+                      "label": "What if I have More Questions?",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>If you have questions about the use of your samples for research, contact the study doctor, Dr. X at 999-999-9999.</p><p>Please circle your answer to show whether or not you would like to take part in each option:</p></div>",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "moreQuestionsAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "samplesForTheLaboratoryStudies",
+              "label": "Samples For The Laboratory Studies:",
+              "fields": [
+                {
+                  "key": "specimenCollectedAgreementlabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "specimenCollectedAgreement",
+                      "label": "I agree to have my specimen collected and I agree that my specimen sample(s) and related information may be used for the laboratory study(ies) described above.",
+                      "type": "RADIO_BUTTONS",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {
+                        "endpoint": "",
+                        "values": [
+                          "Yes",
+                          "No"
+                        ]
+                      },
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "specimenCollectedAgreementAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "agreeToContactMelabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "agreeToContactMe",
+                      "label": "I agree that my study doctor, or their representative, may contact me or my physician to see if I wish to learn about results from this(ese) study(ies).",
+                      "type": "RADIO_BUTTONS",
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {
+                        "endpoint": "",
+                        "values": [
+                          "Yes",
+                          "No"
+                        ]
+                      },
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "agreeToContactMeAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "samplesForFutureResearchStudies",
+              "label": "Samples For Future Research Studies:",
+              "fields": [
+                {
+                  "key": "specimenCollectedAgreementForFuture",
+                  "label": "I agree to have my specimen My samples and related information may be kept in a Biobank for use in future health research.",
+                  "type": "RADIO_BUTTONS",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Yes",
+                      "No"
+                    ]
+                  },
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "agreeToContactMeForFuture",
+                  "label": "I agree that my study doctor, or their representative, may contact me or my physician to see if I wish to participate in other research in the future",
+                  "type": "RADIO_BUTTONS",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Yes",
+                      "No"
+                    ]
+                  },
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            },
+            {
+              "key": "subjectSignatureIC",
+              "label": "My Signature Agreeing to Take Part in the Main Study",
+              "fields": [
+                {
+                  "key": "subjectSignatureICagree",
+                  "label": "I have read this consent form or had it read to me. I have discussed it with the study doctor and my questions have been answered. I will be given a signed copy of this form. I agree to take part in the main study and any additional studies where I circled ‘yesʼ.",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "fields": [
+                    {
+                      "key": "subjectSignatureIC_PA_Sign",
+                      "label": "",
+                      "type": "SIGNATURE",
+                      "subtype": "img",
+                      "defaultValue": "",
+                      "placeholder": "",
+                      "role": "Participant Signature",
+                      "showDate": true,
+                      "justifycontent": true,
+                      "required": true,
+                      "multivalue": false,
+                      "sm": 12,
+                      "validation": ""
+                    },
+                    {
+                      "key": "subjectSignatureIC_discuss",
+                      "label": "",
+                      "type": "SIGNATURE",
+                      "subtype": "img",
+                      "defaultValue": "",
+                      "placeholder": "",
+                      "role": "Person(s) conducting the informed consent discussion Signature",
+                      "showDate": true,
+                      "justifycontent": true,
+                      "required": true,
+                      "multivalue": false,
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fields": [
+            {
+              "key": "submit",
+              "label": "Submit",
+              "access": "PI",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            },
+            {
+              "key": "submitForVerification",
+              "submitVerificationTo": "PI",
+              "label": "Submit for Verification",
+              "access": "site_coordinator",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "HC",
+      "label": "HC",
+      "showInReadOnly": false,
+      "verificationRequired": true,
+      "access": {
+        "edit": [
+          "PI",
+          "site_coordinator"
+        ],
+        "verify": [
+          "PI"
+        ],
+        "actions": [
+          {
+            "applicableStatus": [
+              "Completed",
+              "Verification_Pending"
+            ],
+            "type": "readOnly",
+            "label": "Hippa Consent",
+            "actionData": {
+              "role": [
+                "PI"
+              ]
+            }
+          }
+        ]
+      },
+      "sections": [
+        {
+          "key": "HC",
+          "label": "HC",
+          "otpRequired": true,
+          "categories": [
+            {
+              "key": "HIPAAComplianceSubject",
+              "label": "HIPAA Compliance Subject Consent Form",
+              "fields": [
+                {
+                  "key": "studyTitleForStudyParticipantslabel",
+                  "label": "",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "summaryOfChangesConsent",
+                      "label": "Summary of Changes-Consent",
+                      "type": "DATA_HTML",
+                      "subtype": "text",
+                      "defaultValue": "<div style='padding:15px;border:1px solid #d3d2d0'><p>Our Notice of Privacy Practices provides information about how we may use or disclose protected health information.</p><p>The notice contains a patientʼs rights section describing your rights under the law. You ascertain that by your signature that you have reviewed our notice before signing this consent.</p><p>The terms of the notice may change, if so, you will be notified at your next visit to update your signature/date.</p><p>You have the right to restrict how your protected health information is used and disclosed for treatment, payment or healthcare operations. We are not required to agree with this restriction, but if we do, we shall honor this agreement. The HIPAA (Health Insurance Portability and Accountability Act of 1996) law allows for the use of the information for treatment, payment,or healthcare operations.</p><p>By signing this form, you consent to our use and disclosure of your protected healthcare information and potentially anonymous usage in a publication. You have the right to revoke thisconsentin writing, signed by you. However, such a revocation will not be retroactive.</p><ul><li>Protected health information may be disclosed or used for treatment, payment, or healthcare operations.</li><li>The practice reserves the right to change the privacy policy as allowed by law.</li><li>The practice has the right to restrict the use of the information but the practice does not have to agree to those restrictions.</li><li>The patient has the right to revoke this consent in writing at any time and all full disclosures will then cease.</li><li>The practice may condition receipt of treatment upon execution of this consent.</li></ul></div>",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 11,
+                      "md": 11,
+                      "sm": 11,
+                      "validation": ""
+                    },
+                    {
+                      "key": "summaryOfChangesConsentAudio",
+                      "label": "",
+                      "type": "AUDIO",
+                      "required": true,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "HipaaConsent_Permissions",
+              "label": "",
+              "fields": [
+                {
+                  "key": "contactPermission",
+                  "label": "Can we phone, email, or send a text to you to confirm the appointments?",
+                  "type": "RADIO_BUTTONS",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Yes",
+                      "No"
+                    ]
+                  },
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "leaveMessage",
+                  "label": "Can we leave a message on your answering machine  at home or on your cell phone?",
+                  "type": "RADIO_BUTTONS",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Yes",
+                      "No"
+                    ]
+                  },
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "medicalCondition",
+                  "label": "Can we discuss your medical condition with any member of your family?",
+                  "type": "RADIO_BUTTONS",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Yes",
+                      "No"
+                    ]
+                  },
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "memberName",
+                  "label": "Member Name",
+                  "type": "INLINE_TEXT_FIELD",
+                  "defaultValue": "",
+                  "subtype": "text",
+                  "placeholder": "If yes, please named the members allowed",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "memberRelation",
+                  "label": "Relationship",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Father",
+                      "Mother",
+                      "Son",
+                      "Daughter",
+                      "Spouse"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "memberPhoneNumber",
+                  "label": "Phone Number",
+                  "type": "PHONE_INPUT",
+                  "defaultValue": "",
+                  "subtype": "number",
+                  "placeholder": "Enter Phone Number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            },
+            {
+              "key": "HipaaConsent_ConfirmationSignatures",
+              "label": "",
+              "fields": [
+                {
+                  "key": "confirmationPermissions",
+                  "label": "I have read this consent form or had it read to me. I have discussed it with the study doctor and my questions have been answered. I agree to take part in the main study and any additional studies",
+                  "type": "CHECK_BOX",
+                  "subtype": "",
+                  "defaultValue": "",
+                  "placeholder": "",
+                  "valueRequired": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectName",
+                  "label": "Subject Name",
+                  "type": "DATA_LABEL",
+                  "defaultValue": "",
+                  "subtype": "text",
+                  "placeholder": "Enter name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "signatureConfiguration_HipaaConsent_Subject",
+                  "label": "Subject Signature",
+                  "type": "SIGNATURE",
+                  "subtype": "img",
+                  "defaultValue": "",
+                  "showDate": true,
+                  "currentDateKey": "signatureConfiguration_HipaaConsent_Subject_date",
+                  "placeholder": "Signature",
+                  "justifycontent": true,
+                  "required": true,
+                  "multivalue": false,
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "divider"
+                },
+                {
+                  "key": "inPresenceOf",
+                  "label": "This is to certify that the consent was obtained in my presence.",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12
+                },
+                {
+                  "key": "witnessName",
+                  "label": "Witness Name",
+                  "type": "INLINE_TEXT_FIELD",
+                  "defaultValue": "",
+                  "subtype": "text",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "signatureConfiguration_HipaaConsent_Witness",
+                  "label": "Witness Signature",
+                  "type": "SIGNATURE",
+                  "subtype": "img",
+                  "defaultValue": "",
+                  "showDate": true,
+                  "currentDateKey": "signatureConfiguration_HipaaConsent_Subject_date",
+                  "placeholder": "Signature",
+                  "justifycontent": true,
+                  "required": true,
+                  "multivalue": false,
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            },
+            {
+              "key": "signatureConfiguration_HipaaConsent_Investigator",
+              "label": "Investigator's/Site-Coordinator's Signature",
+              "fields": [
+                {
+                  "key": "inPresenceOfInvestigator",
+                  "label": "This is to certify that the consent was obtained in my presence.",
+                  "type": "LABEL",
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12
+                },
+                {
+                  "key": "InvestigatorName",
+                  "label": "Investigator's Name",
+                  "type": "INLINE_TEXT_FIELD",
+                  "defaultValue": "",
+                  "subtype": "text",
+                  "placeholder": "Enter name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "signatureConfiguration_Investigator",
+                  "label": "Investigaotr's Signature",
+                  "type": "SIGNATURE",
+                  "subtype": "img",
+                  "defaultValue": "",
+                  "showDate": true,
+                  "currentDateKey": "signatureConfiguration_Investigator_date",
+                  "placeholder": "Signature",
+                  "justifycontent": true,
+                  "required": true,
+                  "multivalue": false,
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            }
+          ],
+          "fields": [
+            {
+              "key": "submit",
+              "label": "Submit",
+              "access": "PI",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            },
+            {
+              "key": "submitForVerification",
+              "submitVerificationTo": "PI",
+              "label": "Submit for Verification",
+              "access": "site_coordinator",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "MH",
+      "label": "MH",
+      "verificationRequired": true,
+      "externalVerificationRequired": true,
+      "access": {
+        "edit": [
+          "PI",
+          "site_coordinator"
+        ],
+        "verify": [
+          "PI"
+        ],
+        "externalVerify": [
+          "site_monitor"
+        ]
+      },
+      "readOnlyActions": [
+        {
+          "applicableStatus": [
+            "External_Verification_Pending"
+          ],
+          "label": "Verify",
+          "actionData": {
+            "role": [
+              "site_monitor"
+            ]
+          }
+        }
+      ],
+      "sections": [
+        {
+          "key": "SubjectMedicalHistory",
+          "label": "Medical History Details",
+          "otpRequired": true,
+          "categories": [
+            {
+              "key": "previousMedicalHistory",
+              "label": "Previous Medical History",
+              "addNew": true,
+              "addFields": [
+                {
+                  "key": "previousMedicalHistoryDetails",
+                  "label": "Previous Medical History",
+                  "type": "DROP_DOWN",
+                  "placeholder": "",
+                  "required": true,
+                  "justifycontent": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Allergies",
+                      "Anemia",
+                      "Anxiety",
+                      "Rheumatoid Arthritis",
+                      "Osteoarthritis",
+                      "Asthma",
+                      "Bladder/kidney problems",
+                      "Blood clot (leg)",
+                      "Blood clot (lung)",
+                      "Blood clot (brain)",
+                      "Breast lump (benign)",
+                      "Breast cancer",
+                      "Colon cancer",
+                      "Ovarian cancer",
+                      "Metastatic melanoma",
+                      "Glioblastoma",
+                      "Non-Hogkins Lymphoma",
+                      "Head & amp: neck cancer",
+                      "Pancreatic cancer",
+                      "Renal carcinoma",
+                      "Leukemia",
+                      "Prostate cancer",
+                      "Hepatocellular carcinoma",
+                      "Lung cancer",
+                      "Cataract",
+                      "Colon polyp",
+                      "Coronary artery disease",
+                      "Depression",
+                      "Diabetes type I",
+                      "Diabetes type II",
+                      "Diverticulosis",
+                      "Emphysema",
+                      "Fractures",
+                      "Gallbladder disease",
+                      "Heartburn/GERD",
+                      "Glaucoma",
+                      "Macular degeneration",
+                      "Gout",
+                      "Endometriosis",
+                      "Fibroids",
+                      "Heart attack",
+                      "Cardiac arrest",
+                      "Hepatitis A",
+                      "Hepatitis B",
+                      "Hepatitis C",
+                      "High blood pressure",
+                      "High cholesterol",
+                      "Hip fracture",
+                      "Spine fracture",
+                      "Irritable bowel syndrome",
+                      "Celiac disease",
+                      "Crohn's disease",
+                      "Ulcerative proctitis",
+                      "Kidney failure",
+                      "Kidney stones",
+                      "Fatty liver",
+                      "Liver diseases",
+                      "Migraine",
+                      "Headache",
+                      "Osteoporosis",
+                      "Pneumonia",
+                      "Seizure",
+                      "Epilepsy",
+                      "Eczema",
+                      "Psoriasis",
+                      "Sleep apnea",
+                      "Stomach ulcer",
+                      "Stroke",
+                      "Hyperthyroidism",
+                      "Hypothyroidism",
+                      "Blindness",
+                      "Rickets",
+                      "Down syndrome",
+                      "Alzheimer's disease",
+                      "Parkinson's disease",
+                      "Frontal temporal dementia",
+                      "Mild cognitive impairment",
+                      "Huntington's disease",
+                      "AIDS",
+                      "Tuberculosis (MDR)",
+                      "Tuberculosis (XDR)",
+                      "Tuberculosis (TDR)",
+                      "Tuberculosis (latent)",
+                      "BPH",
+                      "ALS 87",
+                      "Muscular dystrophy",
+                      "Schizophrenia",
+                      "Hair loss",
+                      "Hearing loss",
+                      "Anorexia",
+                      "Cachexia",
+                      "Apraxia",
+                      "Edema (legs)",
+                      "DVT",
+                      "Peripheral neuropathy",
+                      "Vision impairment",
+                      "Diabetic Retinopathy",
+                      "Spondylosis"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "previousMedicalHistoryDetails_comment",
+                      "label": "",
+                      "type": "INLINE_TEXT_FIELD",
+                      "subtype": "text",
+                      "defaultValue": "",
+                      "placeholder": "Enter description",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "sm": 12,
+                      "validation": "",
+                      "justifycontent": true
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "key": "previousMedicalHistoryDetails",
+                  "label": "Previous Medical History",
+                  "type": "DROP_DOWN",
+                  "placeholder": "",
+                  "required": true,
+                  "justifycontent": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Allergies",
+                      "Anemia",
+                      "Anxiety",
+                      "Rheumatoid Arthritis",
+                      "Osteoarthritis",
+                      "Asthma",
+                      "Bladder/kidney problems",
+                      "Blood clot (leg)",
+                      "Blood clot (lung)",
+                      "Blood clot (brain)",
+                      "Breast lump (benign)",
+                      "Breast cancer",
+                      "Colon cancer",
+                      "Ovarian cancer",
+                      "Metastatic melanoma",
+                      "Glioblastoma",
+                      "Non-Hogkins Lymphoma",
+                      "Head & amp: neck cancer",
+                      "Pancreatic cancer",
+                      "Renal carcinoma",
+                      "Leukemia",
+                      "Prostate cancer",
+                      "Hepatocellular carcinoma",
+                      "Lung cancer",
+                      "Cataract",
+                      "Colon polyp",
+                      "Coronary artery disease",
+                      "Depression",
+                      "Diabetes type I",
+                      "Diabetes type II",
+                      "Diverticulosis",
+                      "Emphysema",
+                      "Fractures",
+                      "Gallbladder disease",
+                      "Heartburn/GERD",
+                      "Glaucoma",
+                      "Macular degeneration",
+                      "Gout",
+                      "Endometriosis",
+                      "Fibroids",
+                      "Heart attack",
+                      "Cardiac arrest",
+                      "Hepatitis A",
+                      "Hepatitis B",
+                      "Hepatitis C",
+                      "High blood pressure",
+                      "High cholesterol",
+                      "Hip fracture",
+                      "Spine fracture",
+                      "Irritable bowel syndrome",
+                      "Celiac disease",
+                      "Crohn's disease",
+                      "Ulcerative proctitis",
+                      "Kidney failure",
+                      "Kidney stones",
+                      "Fatty liver",
+                      "Liver diseases",
+                      "Migraine",
+                      "Headache",
+                      "Osteoporosis",
+                      "Pneumonia",
+                      "Seizure",
+                      "Epilepsy",
+                      "Eczema",
+                      "Psoriasis",
+                      "Sleep apnea",
+                      "Stomach ulcer",
+                      "Stroke",
+                      "Hyperthyroidism",
+                      "Hypothyroidism",
+                      "Blindness",
+                      "Rickets",
+                      "Down syndrome",
+                      "Alzheimer's disease",
+                      "Parkinson's disease",
+                      "Frontal temporal dementia",
+                      "Mild cognitive impairment",
+                      "Huntington's disease",
+                      "AIDS",
+                      "Tuberculosis (MDR)",
+                      "Tuberculosis (XDR)",
+                      "Tuberculosis (TDR)",
+                      "Tuberculosis (latent)",
+                      "BPH",
+                      "ALS 87",
+                      "Muscular dystrophy",
+                      "Schizophrenia",
+                      "Hair loss",
+                      "Hearing loss",
+                      "Anorexia",
+                      "Cachexia",
+                      "Apraxia",
+                      "Edema (legs)",
+                      "DVT",
+                      "Peripheral neuropathy",
+                      "Vision impairment",
+                      "Diabetic Retinopathy",
+                      "Spondylosis"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "previousMedicalHistoryDetails_comment",
+                      "label": "",
+                      "type": "INLINE_TEXT_FIELD",
+                      "subtype": "text",
+                      "defaultValue": "",
+                      "placeholder": "Enter description",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "sm": 12,
+                      "validation": "",
+                      "justifycontent": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "divider"
+            },
+            {
+              "key": "currentMedicalCondition",
+              "label": "Current Medical Condition(s)",
+              "addNew": true,
+              "addFields": [
+                {
+                  "key": "currentMedicalConditionDetails",
+                  "label": "Current Medical Condition(s)",
+                  "type": "DROP_DOWN",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Allergies",
+                      "Anemia",
+                      "Anxiety",
+                      "Rheumatoid Arthritis",
+                      "Osteoarthritis",
+                      "Asthma",
+                      "Bladder/kidney problems",
+                      "Blood clot (leg)",
+                      "Blood clot (lung)",
+                      "Blood clot (brain)",
+                      "Breast lump (benign)",
+                      "Breast cancer",
+                      "Colon cancer",
+                      "Ovarian cancer",
+                      "Metastatic melanoma",
+                      "Glioblastoma",
+                      "Non-Hogkins Lymphoma",
+                      "Head & amp: neck cancer",
+                      "Pancreatic cancer",
+                      "Renal carcinoma",
+                      "Leukemia",
+                      "Prostate cancer",
+                      "Hepatocellular carcinoma",
+                      "Lung cancer",
+                      "Cataract",
+                      "Colon polyp",
+                      "Coronary artery disease",
+                      "Depression",
+                      "Diabetes type I",
+                      "Diabetes type II",
+                      "Diverticulosis",
+                      "Emphysema",
+                      "Fractures",
+                      "Gallbladder disease",
+                      "Heartburn/GERD",
+                      "Glaucoma",
+                      "Macular degeneration",
+                      "Gout",
+                      "Endometriosis",
+                      "Fibroids",
+                      "Heart attack",
+                      "Cardiac arrest",
+                      "Hepatitis A",
+                      "Hepatitis B",
+                      "Hepatitis C",
+                      "High blood pressure",
+                      "High cholesterol",
+                      "Hip fracture",
+                      "Spine fracture",
+                      "Irritable bowel syndrome",
+                      "Celiac disease",
+                      "Crohn's disease",
+                      "Ulcerative proctitis",
+                      "Kidney failure",
+                      "Kidney stones",
+                      "Fatty liver",
+                      "Liver diseases",
+                      "Migraine",
+                      "Headache",
+                      "Osteoporosis",
+                      "Pneumonia",
+                      "Seizure",
+                      "Epilepsy",
+                      "Eczema",
+                      "Psoriasis",
+                      "Sleep apnea",
+                      "Stomach ulcer",
+                      "Stroke",
+                      "Hyperthyroidism",
+                      "Hypothyroidism",
+                      "Blindness",
+                      "Rickets",
+                      "Down syndrome",
+                      "Alzheimer's disease",
+                      "Parkinson's disease",
+                      "Frontal temporal dementia",
+                      "Mild cognitive impairment",
+                      "Huntington's disease",
+                      "AIDS",
+                      "Tuberculosis (MDR)",
+                      "Tuberculosis (XDR)",
+                      "Tuberculosis (TDR)",
+                      "Tuberculosis (latent)",
+                      "BPH",
+                      "ALS 87",
+                      "Muscular dystrophy",
+                      "Schizophrenia",
+                      "Hair loss",
+                      "Hearing loss",
+                      "Anorexia",
+                      "Cachexia",
+                      "Apraxia",
+                      "Edema (legs)",
+                      "DVT",
+                      "Peripheral neuropathy",
+                      "Vision impairment",
+                      "Diabetic Retinopathy",
+                      "Spondylosis"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "justifycontent": true,
+                  "fields": [
+                    {
+                      "key": "currentMedicalConditionDetails_comment",
+                      "label": "",
+                      "type": "INLINE_TEXT_FIELD",
+                      "subtype": "text",
+                      "defaultValue": "",
+                      "placeholder": "Enter description",
+                      "required": true,
+                      "multivalue": false,
+                      "justifycontent": true,
+                      "options": {},
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "key": "currentMedicalConditionDetails",
+                  "label": "Current Medical Condition(s)",
+                  "type": "DROP_DOWN",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Allergies",
+                      "Anemia",
+                      "Anxiety",
+                      "Rheumatoid Arthritis",
+                      "Osteoarthritis",
+                      "Asthma",
+                      "Bladder/kidney problems",
+                      "Blood clot (leg)",
+                      "Blood clot (lung)",
+                      "Blood clot (brain)",
+                      "Breast lump (benign)",
+                      "Breast cancer",
+                      "Colon cancer",
+                      "Ovarian cancer",
+                      "Metastatic melanoma",
+                      "Glioblastoma",
+                      "Non-Hogkins Lymphoma",
+                      "Head & amp: neck cancer",
+                      "Pancreatic cancer",
+                      "Renal carcinoma",
+                      "Leukemia",
+                      "Prostate cancer",
+                      "Hepatocellular carcinoma",
+                      "Lung cancer",
+                      "Cataract",
+                      "Colon polyp",
+                      "Coronary artery disease",
+                      "Depression",
+                      "Diabetes type I",
+                      "Diabetes type II",
+                      "Diverticulosis",
+                      "Emphysema",
+                      "Fractures",
+                      "Gallbladder disease",
+                      "Heartburn/GERD",
+                      "Glaucoma",
+                      "Macular degeneration",
+                      "Gout",
+                      "Endometriosis",
+                      "Fibroids",
+                      "Heart attack",
+                      "Cardiac arrest",
+                      "Hepatitis A",
+                      "Hepatitis B",
+                      "Hepatitis C",
+                      "High blood pressure",
+                      "High cholesterol",
+                      "Hip fracture",
+                      "Spine fracture",
+                      "Irritable bowel syndrome",
+                      "Celiac disease",
+                      "Crohn's disease",
+                      "Ulcerative proctitis",
+                      "Kidney failure",
+                      "Kidney stones",
+                      "Fatty liver",
+                      "Liver diseases",
+                      "Migraine",
+                      "Headache",
+                      "Osteoporosis",
+                      "Pneumonia",
+                      "Seizure",
+                      "Epilepsy",
+                      "Eczema",
+                      "Psoriasis",
+                      "Sleep apnea",
+                      "Stomach ulcer",
+                      "Stroke",
+                      "Hyperthyroidism",
+                      "Hypothyroidism",
+                      "Blindness",
+                      "Rickets",
+                      "Down syndrome",
+                      "Alzheimer's disease",
+                      "Parkinson's disease",
+                      "Frontal temporal dementia",
+                      "Mild cognitive impairment",
+                      "Huntington's disease",
+                      "AIDS",
+                      "Tuberculosis (MDR)",
+                      "Tuberculosis (XDR)",
+                      "Tuberculosis (TDR)",
+                      "Tuberculosis (latent)",
+                      "BPH",
+                      "ALS 87",
+                      "Muscular dystrophy",
+                      "Schizophrenia",
+                      "Hair loss",
+                      "Hearing loss",
+                      "Anorexia",
+                      "Cachexia",
+                      "Apraxia",
+                      "Edema (legs)",
+                      "DVT",
+                      "Peripheral neuropathy",
+                      "Vision impairment",
+                      "Diabetic Retinopathy",
+                      "Spondylosis"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "justifycontent": true,
+                  "fields": [
+                    {
+                      "key": "currentMedicalConditionDetails_comment",
+                      "label": "",
+                      "type": "INLINE_TEXT_FIELD",
+                      "subtype": "text",
+                      "defaultValue": "",
+                      "placeholder": "Enter description",
+                      "required": true,
+                      "multivalue": false,
+                      "justifycontent": true,
+                      "options": {},
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "divider"
+            },
+            {
+              "key": "currentMedicationList",
+              "label": "Current Medication List",
+              "addNew": true,
+              "addFields": [
+                {
+                  "key": "drug",
+                  "label": "Drug",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter drug",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "dosage",
+                  "label": "Dosage",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter dosage",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "frequency_cml",
+                  "label": "Frequency",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select Frequency",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Bd (Twice a day)",
+                      "Tds (Three times a day)",
+                      "Eod (Every other day)",
+                      "Qid (Four times a day)",
+                      "Q1d (Every day / Once a day)"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ],
+              "fields": [
+                {
+                  "key": "drug",
+                  "label": "Drug",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter drug",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "dosage",
+                  "label": "Dosage",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter dosage",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "frequency_cml",
+                  "label": "Frequency",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select Frequency",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Bd (Twice a day)",
+                      "Tds (Three times a day)",
+                      "Eod (Every other day)",
+                      "Qid (Four times a day)",
+                      "Q1d (Every day / Once a day)"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            },
+            {
+              "key": "divider"
+            },
+            {
+              "key": "allergies",
+              "label": "Allergies",
+              "addNew": true,
+              "addFields": [
+                {
+                  "key": "allergy",
+                  "label": "Allergy",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Peanuts",
+                      "Eggs",
+                      "Penicillin",
+                      "Cats",
+                      "Dogs",
+                      "Dust",
+                      "Pollen",
+                      "Fish",
+                      "Shellfish",
+                      "Milk",
+                      "Tree nuts",
+                      "Birch",
+                      "Soy",
+                      "Insect bites",
+                      "Sulfates",
+                      "Poison ivy",
+                      "Nickel",
+                      "Apples",
+                      "Formaldehyde",
+                      "Vanilla",
+                      "Sesame seed",
+                      "Salicylates",
+                      "Wheat",
+                      "Latex",
+                      "Mold",
+                      "Pears",
+                      "Peaches",
+                      "Iodine",
+                      "Gadolinium",
+                      "Morphine",
+                      "Levaquin"
+                    ]
+                  },
+                  "justifycontent": true,
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "allergy_comment",
+                      "label": "",
+                      "type": "INLINE_TEXT_FIELD",
+                      "subtype": "text",
+                      "defaultValue": "",
+                      "justifycontent": true,
+                      "placeholder": "Enter description",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "key": "allergy",
+                  "label": "Allergy",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Peanuts",
+                      "Eggs",
+                      "Penicillin",
+                      "Cats",
+                      "Dogs",
+                      "Dust",
+                      "Pollen",
+                      "Fish",
+                      "Shellfish",
+                      "Milk",
+                      "Tree nuts",
+                      "Birch",
+                      "Soy",
+                      "Insect bites",
+                      "Sulfates",
+                      "Poison ivy",
+                      "Nickel",
+                      "Apples",
+                      "Formaldehyde",
+                      "Vanilla",
+                      "Sesame seed",
+                      "Salicylates",
+                      "Wheat",
+                      "Latex",
+                      "Mold",
+                      "Pears",
+                      "Peaches",
+                      "Iodine",
+                      "Gadolinium",
+                      "Morphine",
+                      "Levaquin"
+                    ]
+                  },
+                  "justifycontent": true,
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "allergy_comment",
+                      "label": "",
+                      "type": "INLINE_TEXT_FIELD",
+                      "subtype": "text",
+                      "defaultValue": "",
+                      "justifycontent": true,
+                      "placeholder": "Enter description",
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "divider"
+            },
+            {
+              "key": "primaryCarePhysician",
+              "label": "Primary Care Physician",
+              "fields": [
+                {
+                  "key": "name",
+                  "label": "Name",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "address",
+                  "label": "Address",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter address",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "phoneNumber",
+                  "label": "Phone Number",
+                  "type": "PHONE_INPUT",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "justifycontent": true,
+                  "placeholder": "Enter phone number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            },
+            {
+              "key": "emergencyContact",
+              "label": "Emergency Contact",
+              "fields": [
+                {
+                  "key": "contPersonname",
+                  "label": "Name",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "contPersonRelationship",
+                  "label": "Relationship",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Father",
+                      "Mother",
+                      "Son",
+                      "Daughter",
+                      "Spouse"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "contPerson_phoneNumber",
+                  "label": "Phone Number",
+                  "type": "PHONE_INPUT",
+                  "justifycontent": true,
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "placeholder": "Enter phone number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            },
+            {
+              "key": "divider"
+            },
+            {
+              "key": "completedBy",
+              "label": "Completed By",
+              "access": "PI",
+              "fields": [
+                {
+                  "key": "completedBy_details",
+                  "label": "Completed By",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "justifycontent": true,
+                  "placeholder": "Enter name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "fields": [
+                    {
+                      "key": "signatureConfirmation",
+                      "label": "",
+                      "type": "SIGNATURE",
+                      "subtype": "img",
+                      "defaultValue": "",
+                      "justifycontent": true,
+                      "placeholder": "",
+                      "required": true,
+                      "multivalue": false,
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "divider"
+            }
+          ],
+          "fields": [
+            {
+              "key": "submit",
+              "label": "Submit",
+              "access": "PI",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            },
+            {
+              "key": "submitForVerification",
+              "submitVerificationTo": "PI",
+              "label": "Submit for Verification",
+              "access": "site_coordinator",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "AccVerification",
+      "label": "Acc. Veri.",
+      "verificationRequired": true,
+      "externalVerificationRequired": true,
+      "access": {
+        "edit": [
+          "PI",
+          "site_coordinator"
+        ],
+        "verify": [
+          "PI"
+        ],
+        "externalVerify": [
+          "site_monitor"
+        ]
+      },
+      "readOnlyActions": [
+        {
+          "applicableStatus": [
+            "External_Verification_Pending"
+          ],
+          "label": "Verify",
+          "actionData": {
+            "role": [
+              "site_monitor"
+            ]
+          }
+        }
+      ],
+      "sections": [
+        {
+          "key": "SubjectAccountInfo",
+          "label": "Account Verification",
+          "otpRequired": true,
+          "categories": [
+            {
+              "key": "accountVerification",
+              "label": "Account Details",
+              "fields": [
+                {
+                  "key": "accountNumber",
+                  "label": "Bank Account Number",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter account number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "confirmAccountNumber",
+                  "label": "Confirm Account Number",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter account number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "testSpace",
+                  "label": "",
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12
+                },
+                {
+                  "key": "routingNumber",
+                  "label": "Routing Number",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter routing number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "abaNumber",
+                  "label": "ABA Number",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter ABA Number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "testSpace",
+                  "label": "",
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12
+                },
+                {
+                  "key": "swiftCode",
+                  "label": "Swift Code",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter swift code",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "ssn",
+                  "label": "SSN",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter SSN",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "testSpace",
+                  "label": "",
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12
+                },
+                {
+                  "key": "firstName",
+                  "label": "First Name",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter first name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "lastName",
+                  "label": "Last Name",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter last name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "selectGender",
+                  "label": "Gender",
+                  "type": "DROP_DOWN",
+                  "placeholder": "Select gender",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {
+                    "endpoint": "",
+                    "values": [
+                      "Male",
+                      "Female"
+                    ]
+                  },
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "dobBankDetails",
+                  "label": "Date of Birth",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "DATE",
+                  "defaultValue": "",
+                  "placeholder": "Enter Date of Birth",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectEmail_BD",
+                  "label": "Email",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter email Id",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectMobile_BD",
+                  "label": "Mobile Number",
+                  "type": "PHONE_INPUT",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "placeholder": "Enter mobile number",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectAddress_BD",
+                  "label": "Address",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter Address",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 3,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectCity_BD",
+                  "label": "City",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter city",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectState_BD",
+                  "label": "State",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "placeholder": "Enter State",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "subjectZipcode_BD",
+                  "label": "Zip Code",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "placeholder": "Enter Zipcode",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "countrycode_BD",
+                  "label": "Country Code",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "number",
+                  "defaultValue": "",
+                  "placeholder": "Enter Zipcode",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 4,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            },
+            {
+              "key": "governmentDocuments",
+              "label": "Government approved document: ",
+              "fields": [
+                {
+                  "key": "FrontPhoto",
+                  "label": "Front Photo",
+                  "type": "LABEL",
+                  "subtype": "",
+                  "defaultValue": "",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "justifycontent": true,
+                  "fields": [
+                    {
+                      "key": "uploadDoc_FrontPhoto",
+                      "label": "",
+                      "type": "FILE_UPLOAD",
+                      "subtype": "",
+                      "defaultValue": "",
+                      "supportedFormats": [
+                        "png",
+                        "jpg",
+                        "JPEG",
+                        "pdf"
+                      ],
+                      "fileSize": 100000000,
+                      "placeholder": "",
+                      "justifycontent": true,
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 12,
+                      "md": 12,
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                },
+                {
+                  "key": "BackPhoto",
+                  "label": "Back Photo",
+                  "type": "LABEL",
+                  "subtype": "",
+                  "defaultValue": "",
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": "",
+                  "justifycontent": true,
+                  "fields": [
+                    {
+                      "key": "uploadDoc_BackPhoto",
+                      "label": "",
+                      "type": "FILE_UPLOAD",
+                      "subtype": "",
+                      "defaultValue": "",
+                      "supportedFormats": [
+                        "png",
+                        "jpg",
+                        "JPEG",
+                        "pdf"
+                      ],
+                      "fileSize": 100000000,
+                      "placeholder": "",
+                      "justifycontent": true,
+                      "required": true,
+                      "multivalue": false,
+                      "options": {},
+                      "lg": 12,
+                      "md": 12,
+                      "sm": 12,
+                      "validation": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "signatureConfirmation_subject",
+              "label": "By signing, I hereby declare that the information furnished above is true, complete and correct to the best of my knowledge",
+              "access": "PI",
+              "fields": [
+                {
+                  "key": "subjectName",
+                  "label": "Subject Name",
+                  "type": "DATA_LABEL",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "justifycontent": true,
+                  "placeholder": "Enter name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "signatureConfirmation",
+                  "label": "Subject Signature",
+                  "type": "SIGNATURE",
+                  "subtype": "img",
+                  "showDate": true,
+                  "defaultValue": "",
+                  "justifycontent": true,
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            },
+            {
+              "key": "signatureConfirmation_investigator",
+              "label": "Investigator's/Site-Cordinator's Signature",
+              "helperLable": "I certify that I have accurately & completely filled the questions based on the patient's response.",
+              "access": "PI",
+              "fields": [
+                {
+                  "key": "InvestigatorName",
+                  "label": "Investigator's Name",
+                  "type": "INLINE_TEXT_FIELD",
+                  "subtype": "text",
+                  "defaultValue": "",
+                  "justifycontent": true,
+                  "placeholder": "Enter name",
+                  "required": true,
+                  "multivalue": false,
+                  "options": {},
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                },
+                {
+                  "key": "InvestigatorConfirmation",
+                  "label": "Investigator's Signature",
+                  "type": "SIGNATURE",
+                  "subtype": "img",
+                  "showDate": true,
+                  "defaultValue": "",
+                  "justifycontent": true,
+                  "placeholder": "",
+                  "required": true,
+                  "multivalue": false,
+                  "lg": 6,
+                  "md": 6,
+                  "sm": 12,
+                  "validation": ""
+                }
+              ]
+            }
+          ],
+          "fields": [
+            {
+              "key": "submit",
+              "label": "Add & Enroll",
+              "access": "PI",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            },
+            {
+              "key": "submitForVerification",
+              "submitVerificationTo": "PI",
+              "label": "Submit for Verification",
+              "access": "site_coordinator",
+              "type": "BUTTON",
+              "lg": 12,
+              "md": 12,
+              "sm": 12
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

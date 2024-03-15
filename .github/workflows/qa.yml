@@ -1,0 +1,49 @@
+name: Build and push the Web app to S3 & CloudFront
+
+on :
+  push:
+    branches: 
+      - qa
+jobs:
+  build:
+    name: Build master branch adn deploy it to dev env
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.4.0]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        registry-url: 'https://registry.npmjs.org'
+    - name: Npm Install
+      run: |
+        npm install
+    - name: Code Build
+      run: |
+        npm run build
+      env:
+        CI: false
+        REACT_APP_TOKEN_CLIENT_NAME: bloqcube-qa
+        REACT_APP_API_ENDPOINT_URL: https://api.qa.bloqcube.com/
+    - name: Deploy to Production
+      uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --delete
+      env:
+        AWS_S3_BUCKET: webapp.qa.bloqcube.com
+        AWS_ACCESS_KEY_ID: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ap-south-1
+        SOURCE_DIR: "build"
+    - name: Invalidate Cloudfront Cache
+      uses: awact/cloudfront-action@master
+      env:
+        AWS_REGION: 'ap-south-1'
+        AWS_ACCESS_KEY_ID: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
+        DISTRIBUTION_ID: E2IMMQPJCZVGUL
